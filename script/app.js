@@ -64,6 +64,7 @@ displayProducts(products) {
     }
     getBagButtons() {
         const buttons = [...document.querySelectorAll('.bag-btn')]
+        buttonsDOM = buttons
         buttons.forEach(button => {
             let id = button.dataset.id
             let inCart = cart.find(item => item.id === id)
@@ -72,8 +73,17 @@ displayProducts(products) {
                 button.disabled = true
             }
             button.addEventListener('click', (event) => {
-                    event.target.innerText = 'no carrinho'
+                    event.target.innerText = 'item no carrinho'
                     event.target.disabled = true
+
+                    let cartItem = {...Storage.getProduct(id), amount: 1}
+                    
+                    // add product to the cart
+                    cart = [...cart, cartItem]
+
+                    // save cart in local storage
+
+                    Storage.saveCart(cart)
 
                 })
             
@@ -85,7 +95,14 @@ displayProducts(products) {
 
 class Storage {
     static saveProducts(products) {
-        localStorage.setItem(" products", JSON.stringify(products))
+        localStorage.setItem("products", JSON.stringify(products))
+    }
+    static getProduct(id) {
+        let products = JSON.parse(localStorage.getItem('products'))
+        return products.find(product => product.id === id)
+    }
+    static saveCart(cart) {
+        localStorage.setItem('cart',JSON.stringify(cart))
     }
 }
 
