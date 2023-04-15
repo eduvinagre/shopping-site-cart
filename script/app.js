@@ -89,6 +89,10 @@ displayProducts(products) {
 
                     this.setCartValues(cart)
 
+                    // display cart item
+
+                    this.addCartItem(cartItem)
+
                 })
             
         })
@@ -102,6 +106,25 @@ displayProducts(products) {
         })
         cartTotal.innerText = parseFloat(tempTotal.toFixed(2))
         cartItems.innerText = itemsTotal
+    }
+    addCartItem(item) {
+        const div = document.createElement('div')
+        div.classList.add('cart-item')
+        div.innerHTML = `<img src=${item.image} alt="cama queen">
+                <div>
+                    <h4>${item.title}</h4>
+                    <h5>R$${item.price}</h5>
+                    <span class="remove-item" data-id=${item.id}>remover</span>
+                </div>
+                <div>
+                    <i class="fas fa-chevron-up" data-id=${item.id}></i>
+                    <p class="item-amount">${item.amount}</p>
+                    <i class="fas fa-chevron-down" data-id=${item.id}></i>
+                </div>`
+        cartContent.appendChild(div)
+    }
+    showCart() {
+        
     }
 }
 
