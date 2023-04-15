@@ -14,6 +14,10 @@ const productsDOM = document.querySelector('.products-center')
 
 let cart = []
 
+//buttons
+
+let buttonsDOM = []
+
 // getting the products
 
 class Products {
@@ -58,6 +62,23 @@ displayProducts(products) {
     })
     productsDOM.innerHTML = result
     }
+    getBagButtons() {
+        const buttons = [...document.querySelectorAll('.bag-btn')]
+        buttons.forEach(button => {
+            let id = button.dataset.id
+            let inCart = cart.find(item => item.id === id)
+            if(inCart){
+                button.innerText = 'no carrinho'
+                button.disabled = true
+            }
+            button.addEventListener('click', (event) => {
+                    event.target.innerText = 'no carrinho'
+                    event.target.disabled = true
+
+                })
+            
+        })
+    }
 }
 
 //local storage
@@ -76,5 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     products.getProducts().then(products => {
         ui.displayProducts(products)
         Storage.saveProducts(products)
+    }).then(() => {
+        ui.getBagButtons()
     })
 })
