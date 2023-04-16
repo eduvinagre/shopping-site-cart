@@ -5,7 +5,7 @@ This is a functional project made using JavaScript. User will be able to add ite
 ## Table of contents
 
 - [Overview](#overview)
-  - [Deploy] (#deploy)
+  - [Deploy](#deploy )
   - [The challenge](#the-challenge)
   - [Screenshots](#screenshot)
   - [My process](#my-process)
