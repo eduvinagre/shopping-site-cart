@@ -29,12 +29,12 @@ The challenge on this product was to practice DOM manipulation, CRUD (create, re
 
 ### Screenshot
 
-![](./screenshot-1.png)
-![](./screenshot-2.png)
-![](./screenshot-3.png)
-![](./screenshot-4.png)
-![](./screenshot-5.png)
-![](./screenshot-6.png)
+![](./Screenshot-1.png)
+![](./Screenshot-2.png)
+![](./Screenshot-3.png)
+![](./Screenshot-4.png)
+![](./Screenshot-5.png)
+![](./Screenshot-6.png)
 
 ## My process
 
