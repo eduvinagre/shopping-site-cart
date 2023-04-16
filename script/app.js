@@ -126,7 +126,7 @@ displayProducts(products) {
         cartContent.appendChild(div)
     }
     showCart() {
-        cartOverlay.classList.add("transparentBcgz")
+        cartOverlay.classList.add("transparentBcg")
         cartDOM.classList.add("showCart")
     }
 }
