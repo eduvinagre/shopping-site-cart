@@ -93,6 +93,8 @@ displayProducts(products) {
 
                     this.addCartItem(cartItem)
 
+                    // show cart
+                    this.showCart()
                 })
             
         })
@@ -124,7 +126,8 @@ displayProducts(products) {
         cartContent.appendChild(div)
     }
     showCart() {
-        
+        cartOverlay.classList.add("transparentBcgz")
+        cartDOM.classList.add("showCart")
     }
 }
 
