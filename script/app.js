@@ -1,3 +1,8 @@
+const client = contentful.createClient({
+  space: 'isd72zq12jcv',
+  accessToken: 'Nwj-J9-H0rR79HINUfGsbnhQ4sQY8V2lNFDjvZnzklk',
+})
+
 // variables
 
 const cartBtn = document.querySelector('.cart-btn')
@@ -23,9 +28,14 @@ let buttonsDOM = []
 class Products {
     async getProducts() {
         try {
+            let contenful = await client.getEntries({
+                content_type: "produtosCasaConforto"
+            })
+            console.log(contenful);
+
             let result = await fetch('products.json')
             let data = await result.json()
-            let products = data.items
+            let products = contenful.items
             products = products.map(item => {
                 const {title,price} = item.fields
                 const {id} = item.sys
