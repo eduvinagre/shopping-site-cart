@@ -25,7 +25,7 @@ https://shopping-site-cart.vercel.app/
 
 ### The challenge
 
-The challenge on this product was to practice DOM manipulation, CRUD (create, remove, update, delete), local storage and API usage
+The challenge on this product was to practice DOM manipulation, CRUD (create, remove, update, delete), local storage and API usage. And of course, make it responsive
 
 ### Screenshot
 
