@@ -1,6 +1,6 @@
 const client = contentful.createClient({
-  space: 'isd72zq12jcv',
-  accessToken: 'Nwj-J9-H0rR79HINUfGsbnhQ4sQY8V2lNFDjvZnzklk',
+  space: 
+  accessToken: 
 })
 
 // variables
